@@ -11,297 +11,70 @@
     --brand-light: #EFF6FF;
     --border-color: #DBEAFE;
     --text-primary: #1F2937;
-    --warn-bg: #FFF7ED;
-    --warn-border: #FED7AA;
-    --warn-text: #92400E;
-    --green-bg: #F0FDF4;
-    --green-border: #BBF7D0;
-    --green-text: #166534;
-    --beta-bg: #F5F3FF;
-    --beta-border: #C4B5FD;
-    --beta-text: #4C1D95;
-    --beta-accent: #7C3AED;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; color: var(--text-primary); line-height: 1.7; background: #F8FAFC; }
   .cover { background: var(--brand-dark); color: white; padding: 56px 40px 48px; text-align: center; }
   .cover .brand { font-size: 11px; letter-spacing: 4px; color: #93C5FD; margin-bottom: 16px; text-transform: uppercase; }
   .cover h1 { font-size: 36px; font-weight: 700; margin-bottom: 10px; }
-  .cover .subtitle { color: #BFDBFE; font-size: 15px; margin-bottom: 8px; }
-  .cover .meta { color: #93C5FD; font-size: 13px; }
+  .cover .subtitle { color: #BFDBFE; font-size: 15px; }
+  .lang-switch { margin: 20px 0 4px; }
+  .lang-switch button { background: transparent; border: 1.5px solid rgba(255,255,255,0.4); color: rgba(255,255,255,0.7); padding: 5px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; cursor: pointer; margin: 0 4px; letter-spacing: 1.5px; transition: all 0.2s; }
+  .lang-switch button.active { background: white; color: var(--brand-dark); border-color: white; }
   .container { max-width: 820px; margin: 0 auto; padding: 40px 24px 80px; }
-  .intro-box { background: var(--brand-light); border: 1px solid var(--border-color); border-radius: 8px; padding: 14px 18px; margin: 32px 0 8px; font-size: 13.5px; color: #1E40AF; line-height: 1.6; }
-  .section { margin-top: 36px; }
-  .section-title { font-size: 18px; font-weight: 700; color: var(--brand-accent); margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px solid var(--border-color); }
-  .beta-section { margin-top: 36px; background: var(--beta-bg); border: 1.5px solid var(--beta-border); border-radius: 10px; padding: 24px 28px; }
-  .beta-section .section-title { color: var(--beta-accent); border-bottom-color: var(--beta-border); }
-  .beta-badge { display: inline-block; background: var(--beta-accent); color: white; font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 2px 10px; border-radius: 20px; margin-bottom: 12px; text-transform: uppercase; }
-  .beta-intro { font-size: 13.5px; color: var(--beta-text); background: white; border: 1px solid var(--beta-border); border-radius: 6px; padding: 10px 14px; margin-bottom: 14px; line-height: 1.6; }
-  .sub-title { font-size: 14px; font-weight: 700; color: var(--brand-dark); margin: 14px 0 6px; }
-  .beta-section .sub-title { color: var(--beta-accent); }
-  p { margin-bottom: 10px; font-size: 14.5px; }
-  ul { margin: 6px 0 10px 0; padding: 0; list-style: none; }
-  ul li { padding: 3px 0 3px 18px; position: relative; font-size: 14px; }
-  ul li::before { content: "•"; position: absolute; left: 4px; color: var(--brand-accent); }
-  .beta-section ul li::before { color: var(--beta-accent); }
-  table { width: 100%; border-collapse: collapse; margin: 10px 0 14px; font-size: 13.5px; }
-  thead tr { background: var(--brand-accent); color: white; }
-  thead th { padding: 9px 10px; text-align: left; font-weight: 600; }
-  tbody tr:nth-child(odd) { background: white; }
-  tbody tr:nth-child(even) { background: var(--brand-light); }
-  tbody td { padding: 8px 10px; border: 1px solid var(--border-color); vertical-align: top; }
-  .warn-box { background: var(--warn-bg); border: 1px solid var(--warn-border); border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 13.5px; color: var(--warn-text); line-height: 1.6; }
-  .green-box { background: var(--green-bg); border: 1px solid var(--green-border); border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 13.5px; color: var(--green-text); line-height: 1.6; }
-  .placeholder-box { background: #FEF3C7; border: 1px solid #FCD34D; border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 13.5px; color: #92400E; line-height: 1.6; }
-  .contact-box { background: var(--brand-light); border: 1px solid var(--border-color); border-radius: 8px; padding: 18px; text-align: center; margin-top: 12px; font-size: 14.5px; }
-  hr { border: none; border-top: 1px solid var(--border-color); margin: 24px 0 4px; }
-  a { color: var(--brand-accent); }
-  @media (max-width: 600px) { .cover { padding: 36px 20px 32px; } .cover h1 { font-size: 26px; } table { font-size: 12px; } .beta-section { padding: 16px; } }
+  .intro-box { background: var(--brand-light); border: 1px solid var(--border-color); border-radius: 8px; padding: 14px 18px; margin-bottom: 28px; font-size: 13.5px; color: #1E40AF; line-height: 1.6; }
+  @media (max-width: 600px) { .cover { padding: 36px 20px 32px; } .cover h1 { font-size: 26px; } }
 </style>
 </head>
 <body>
+
 <div class="cover">
   <div class="brand">Volio App</div>
-  <h1>Privacy Policy</h1>
-  <div class="subtitle">Version 2.0 — Volio App S.r.l. — GDPR &amp; Swiss nFADP Compliant</div>
-  <div class="meta">Last updated: July 15, 2026</div>
-</div>
-<div class="container">
-  <div class="placeholder-box">⚠ One placeholder remains before publication: <strong>[REA Number]</strong> (from Camera di Commercio — Registro Imprese CO).</div>
-
-  <div class="intro-box">This Privacy Policy explains how your personal data is collected, used, and protected when you use Volio App. It applies to all users of the App and, where indicated, to participants of the Beta Testing Program. It is compliant with the EU General Data Protection Regulation (GDPR) and the Swiss Federal Act on Data Protection (nFADP).</div>
-
-  <div class="section">
-    <div class="section-title">1. Data Controller</div>
-    <p>The data controller responsible for your personal data is:<br><br>
-    <strong>Volio App S.r.l.</strong><br>
-    Via Mazzini 10, 22077 Olgiate Comasco (CO), Italy<br>
-    P.IVA 04312420138 — REA [REA Number]<br>
-    admin@volioapp.it</p>
-    <p>Volio App S.r.l. is the successor to, and has assumed all data controller obligations previously held by, Issak Zanini as the individual developer who originally operated the App prior to the Company's incorporation. Any reference to "Issak Zanini" in earlier versions of this Policy or in historical consent records refers to the Company's founder and predecessor, and does not affect the validity of consents previously given.</p>
+  <div class="lang-switch">
+    <button onclick="setLang('en')" id="btn-en" class="active">EN</button>
+    <button onclick="setLang('it')" id="btn-it">IT</button>
   </div>
-  <hr>
-
-  <div class="section">
-    <div class="section-title">2. What Data We Collect</div>
-    <div class="sub-title">a) Account data (all users)</div>
-    <ul><li>Full name</li><li>Email address</li><li>Sign-in identifier from Google or Apple, if you registered using Sign in with Google or Sign in with Apple</li></ul>
-
-    <div class="sub-title">b) Flight track and ADS-B data (all users)</div>
-    <p>Recorded aircraft transponder data sourced from <strong>Flightradar24's FR24 API</strong> service and associated with your profile, covering aircraft, helicopters, gliders, ultralights, and other flying objects. Data types include ADS-B (Automatic Dependent Surveillance-Broadcast), MLAT (Multilateration), FLARM, and OGN (Open Glider Network) feeds. This data is shared with other registered users of the App by design — using the flight tracking feature constitutes your explicit consent to this sharing.</p>
-
-    <div class="sub-title">c) Map interaction data (all users)</div>
-    <p>When you view maps within the App, your device sends requests to <strong>Mapbox</strong> servers to retrieve map tiles. These requests may include your <strong>IP address</strong> and the map area being viewed. This data is processed by Mapbox per their own Privacy Policy and is not stored by Volio App.</p>
-
-    <div class="sub-title">d) Beta tester signup data (beta testers only)</div>
-    <p>Prospective beta testers who sign up via the dedicated <strong>Microsoft Forms</strong> form provide the following additional data at the point of recruitment:</p>
-    <ul>
-      <li>Full name and email address (mandatory)</li>
-      <li>Phone number (optional — only if consenting to WhatsApp contact for beta coordination)</li>
-      <li>Timestamped record of consent to these Terms and this Privacy Policy</li>
-    </ul>
-    <p>This data is collected and stored by <strong>Microsoft</strong> on behalf of Volio App via Microsoft Forms / Microsoft 365. See Section 10 for full details.</p>
-
-    <div class="sub-title">e) Payment and purchase data (users of Paid Features)</div>
-    <p>If you purchase a subscription or in-app purchase for Paid Features, transaction information is processed primarily by <strong>Apple App Store</strong> or <strong>Google Play</strong> billing. See Section 8 for full details.</p>
-
-    <div class="sub-title">f) Usage and analytics data (all users)</div>
-    <ul><li>In-app actions and feature interactions</li><li>Session duration and frequency of use</li></ul>
-
-    <div class="sub-title">g) Device and technical information (all users)</div>
-    <ul><li>Device type and operating system version</li><li>App version</li><li>Crash logs and error reports</li><li>IP address (for connection and security purposes)</li></ul>
+  <div id="cover-en">
+    <h1>Privacy Policy</h1>
+    <div class="subtitle">Volio App S.r.l.</div>
   </div>
-  <hr>
-
-  <div class="section">
-    <div class="section-title">3. Purpose and Legal Basis for Processing</div>
-    <table>
-      <thead><tr><th>Purpose</th><th>Legal basis</th></tr></thead>
-      <tbody>
-        <tr><td>Managing your account and access to the App, including sign-in via Google or Apple</td><td>Performance of contract (Art. 6(1)(b) GDPR)</td></tr>
-        <tr><td>Sourcing and displaying recorded flight data (ADS-B, MLAT, FLARM, OGN) via the Flightradar24 FR24 API</td><td>Performance of contract + explicit consent (Art. 6(1)(b) and (a) GDPR)</td></tr>
-        <tr><td>Sharing your flight track with other users</td><td>Explicit consent (Art. 6(1)(a) GDPR)</td></tr>
-        <tr><td>Rendering maps via Mapbox</td><td>Performance of contract / legitimate interest (Art. 6(1)(b) and (f) GDPR)</td></tr>
-        <tr><td>Improving and debugging the App</td><td>Legitimate interest (Art. 6(1)(f) GDPR)</td></tr>
-        <tr><td>Processing takedown and wrongful association requests</td><td>Legal obligation + legitimate interest (Art. 6(1)(c) and (f) GDPR)</td></tr>
-        <tr><td>Processing account deletion requests</td><td>Legal obligation (Art. 6(1)(c) GDPR) + performance of contract (Art. 6(1)(b) GDPR)</td></tr>
-        <tr><td>Sending App updates and communications via Brevo</td><td>Consent (Art. 6(1)(a) GDPR) — withdrawable at any time</td></tr>
-        <tr><td>Beta tester signup and consent recording via Microsoft Forms</td><td>Legal obligation to document consent (Art. 6(1)(c) GDPR) + legitimate interest (Art. 6(1)(f) GDPR)</td></tr>
-        <tr><td>Beta tester WhatsApp coordination (optional, phone number only)</td><td>Explicit consent (Art. 6(1)(a) GDPR) — withdrawable at any time</td></tr>
-        <tr><td>Processing beta feedback and usage data for product development</td><td>Consent (Art. 6(1)(a) GDPR) — beta testers only</td></tr>
-        <tr><td>Complying with legal obligations</td><td>Legal obligation (Art. 6(1)(c) GDPR)</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <hr>
-
-  <div class="section">
-    <div class="section-title">4. Infrastructure and Hosting — Amazon Web Services (AWS)</div>
-    <p>The App's backend infrastructure is hosted on <strong>Amazon Web Services (AWS)</strong>, operated by Amazon Web Services EMEA SARL (38 Avenue John F. Kennedy, L-1855 Luxembourg).</p>
-    <div class="green-box">✓ All Volio App servers are located in the AWS eu-south-1 region (Milan, Italy). Your personal data is stored and processed exclusively within the European Union and is not transferred outside the EU/EEA as part of our hosting infrastructure.</div>
-    <p>AWS acts as a data processor on our behalf under a GDPR Art. 28-compliant Data Processing Addendum. For more information: <a href="https://aws.amazon.com/compliance/gdpr-center/">https://aws.amazon.com/compliance/gdpr-center/</a></p>
-  </div>
-  <hr>
-
-  <div class="section">
-    <div class="section-title">5. Flightradar24 FR24 API — Flight Data Provider</div>
-    <p>The App sources recorded aircraft transponder data (ADS-B, MLAT, FLARM, OGN) from <strong>Flightradar24 AB</strong> via its FR24 API service (Brunnsgatan 13, 111 38 Stockholm, Sweden). Flightradar24 AB acts as an independent data controller for the flight data it collects and provides through its API. As Flightradar24 AB is based in Sweden (European Union), no international data transfer outside the EU/EEA is required for this integration.</p>
-    <p>For more information: <a href="https://www.flightradar24.com/privacy-policy-flight-tracking">https://www.flightradar24.com/privacy-policy-flight-tracking</a></p>
-    <div class="warn-box">⚠ Important: ADS-B data must not be used for safety-of-life activities, real-time navigation, collision avoidance, air traffic control, or any safety-critical aviation purpose.</div>
-  </div>
-  <hr>
-
-  <div class="section">
-    <div class="section-title">6. Mapbox — Map Rendering Service</div>
-    <p>Maps within the App are rendered using the <strong>Mapbox</strong> platform, operated by Mapbox Inc. (740 15th Street NW, Washington DC 20005, USA). When you view a map in the App, your device sends requests directly to Mapbox servers to load map tiles. These requests may include:</p>
-    <ul>
-      <li>Your <strong>IP address</strong> (used by Mapbox to serve map tiles and for security purposes)</li>
-      <li>The <strong>map area being viewed</strong> (approximate geographic location)</li>
-      <li>Technical metadata such as device type and SDK version</li>
-    </ul>
-    <p>Volio App does not receive, store, or have access to the data sent directly from your device to Mapbox. EU Standard Contractual Clauses (SCCs) apply to this US transfer.</p>
-    <p>For more information: <a href="https://www.mapbox.com/legal/privacy">https://www.mapbox.com/legal/privacy</a></p>
-  </div>
-  <hr>
-
-  <div class="section">
-    <div class="section-title">7. Email Communications — Brevo</div>
-    <p>Your email address is managed using <strong>Brevo</strong> (formerly Sendinblue), operated by Sendinblue SAS (7 rue de Madrid, 75008 Paris, France).</p>
-    <div class="green-box">✓ Brevo is a French company with servers located within the European Union. Email communications via Brevo do not involve any transfer of your personal data outside the EU/EEA.</div>
-    <p>We use Brevo to send you communications related to the App, new features, and future releases. You can unsubscribe at any time using the unsubscribe link in any email or by contacting <strong>admin@volioapp.it</strong>. For more information: <a href="https://www.brevo.com/legal/privacypolicy/">https://www.brevo.com/legal/privacypolicy/</a></p>
-  </div>
-  <hr>
-
-  <div class="section">
-    <div class="section-title">8. Apple App Store and Google Play — Payment Processing</div>
-    <p>The App does not currently offer any paid features, subscriptions, or in-app purchases, and accordingly no payment data is collected or processed. If paid features are introduced in the future, this section will be updated accordingly before their launch.</p>
-    <p>Sign in with Apple and Sign in with Google are used solely for account authentication and are described in Sections 2 and 3 above. No payment processing by Apple or Google occurs at this time.</p>
-  </div>
-  <hr>
-
-  <div class="section">
-    <div class="section-title">9. Data Sharing and International Transfers</div>
-    <p>Your personal data is <strong>not sold</strong> to third parties. It is shared only with:</p>
-    <ul>
-      <li><strong>Amazon Web Services (AWS, eu-south-1 Milan)</strong> — hosting. EU-based. No international transfer.</li>
-      <li><strong>Brevo / Sendinblue SAS (France)</strong> — email communications. EU-based. No international transfer.</li>
-      <li><strong>Flightradar24 AB (Sweden, EU)</strong> — ADS-B data provider. EU-based; no international data transfer.</li>
-      <li><strong>Mapbox Inc. (US)</strong> — map tile requests from your device. SCCs apply.</li>
-      <li><strong>Apple Inc. (US/EU) and Google LLC (US/EU)</strong> — sign-in authentication and, for users of Paid Features, payment and subscription billing. Each acts as an independent data controller for the data it processes; SCCs apply to relevant US transfers.</li>
-      <li><strong>Microsoft Corporation (US)</strong> — beta tester signup form and consent records via Microsoft Forms. EU data boundary applies; SCCs in place. Beta testers only.</li>
-      <li><strong>Meta / WhatsApp (Ireland/US)</strong> — phone number only, for beta testers who optionally consent to WhatsApp coordination. SCCs apply. Beta testers only.</li>
-      <li><strong>Analytics/crash reporting tools</strong> — for improving App stability.</li>
-      <li><strong>Other App users</strong> — your flight track data, once associated with your profile, is visible to other registered users.</li>
-      <li><strong>Legal or regulatory authorities</strong> — where required by law.</li>
-    </ul>
-    <div class="green-box">✓ The majority of your data is processed within the EU (AWS Milan + Brevo France + Flightradar24 Sweden). Limited transfers to US-based processors (Mapbox, Apple, Google, Microsoft, and optionally Meta/WhatsApp) are each covered by Standard Contractual Clauses.</div>
-  </div>
-  <hr>
-
-  <!-- BETA TESTING SECTION -->
-  <div class="beta-section">
-    <div class="beta-badge">Beta Testing Program</div>
-    <div class="section-title">10. Additional Privacy Information for Beta Testers</div>
-    <div class="beta-intro">This section applies exclusively to users who have been invited to participate in the Volio App Beta Testing Program and have completed the signup via Microsoft Forms. If you have not been specifically invited as a beta tester, this section does not apply to you.</div>
-
-    <div class="sub-title">10.1 How beta tester data is collected</div>
-    <p>Beta testers are recruited via LinkedIn, Instagram, other social platforms, or personal invitation. Upon expressing interest, candidates are directed to a dedicated <strong>Microsoft Forms</strong> signup form. Data collected through this form includes name, email address, and optionally phone number. The form records a timestamped consent entry — this constitutes the formal, auditable record of your agreement to these Terms and this Privacy Policy, as required by GDPR Art. 7(1).</p>
-    <p>No personal data is collected from social media profiles themselves — only the information you actively provide in the Microsoft Forms signup form is processed by Volio App.</p>
-
-    <div class="sub-title">10.2 App Test Link — Personal Use Only</div>
-    <p>Beta testers who are provided with a link or invitation to install the App via <strong>Apple TestFlight</strong> (iOS) or <strong>Google Play Beta</strong> (Android) receive a strictly personal, non-transferable access link. No data is collected about the act of sharing or forwarding the link itself; however, Volio App may record the identity of the original invitee for the purposes of auditing access and enforcing the non-transferability obligation set out in the Terms &amp; Conditions.</p>
-    <p>If a beta access link is found to have been shared with a third party, the personal data of the original invitee may be used to identify and revoke the breach. No additional personal data of unauthorised third parties who accessed the beta via a shared link will be retained beyond what is technically necessary to remove their access.</p>
-
-    <div class="sub-title">10.3 Microsoft Forms and Microsoft 365</div>
-    <p>The beta signup form is hosted on <strong>Microsoft Forms</strong>, a service provided by Microsoft Corporation (One Microsoft Way, Redmond, WA 98052, USA). Form responses — including your name, email, phone number (if provided), and consent timestamp — are stored in the Volio App Microsoft 365 account.</p>
-    <p>Microsoft has implemented its <strong>EU Data Boundary</strong> commitment, meaning that for Microsoft 365 customers based in the EU, data is stored and processed within the EU/EEA. EU Standard Contractual Clauses are also in place as an additional safeguard. For more information: <a href="https://www.microsoft.com/en-us/trust-center/privacy">https://www.microsoft.com/en-us/trust-center/privacy</a></p>
-
-    <div class="sub-title">10.4 WhatsApp coordination (optional)</div>
-    <p>Beta testers who optionally provide their phone number in the signup form and consent to WhatsApp contact may be added to a private WhatsApp group used exclusively for beta coordination. WhatsApp is operated by Meta Platforms Ireland Limited (4 Grand Canal Square, Dublin 2, Ireland). Data may be transferred to Meta's US infrastructure under EU Standard Contractual Clauses. For more information: <a href="https://www.whatsapp.com/legal/privacy-policy">https://www.whatsapp.com/legal/privacy-policy</a></p>
-    <p>Beta testers may leave the WhatsApp group at any time. Upon leaving or upon request to <strong>admin@volioapp.it</strong>, the phone number will be deleted from our records within <strong>7 days</strong>.</p>
-
-    <div class="sub-title">10.5 Additional data collected during testing</div>
-    <p>In addition to the data described in Section 2, beta testers' App interactions may be recorded in greater detail for product development, including specific feature usage patterns, error logs, and feedback or bug reports submitted during the program. This data is used solely for internal product development and is subject to the same retention and anonymisation rules described in Section 10.6.</p>
-
-    <div class="sub-title">10.6 Retention of beta testing data</div>
-    <p>Microsoft Forms signup records (name, email, consent timestamp) will be retained for the duration of the beta program and for up to <strong>24 months</strong> afterwards to demonstrate compliance with GDPR consent requirements. Phone numbers will be deleted within 7 days of leaving the WhatsApp group or upon request. Detailed beta usage logs may be retained in anonymised form indefinitely for product analysis.</p>
-
-    <div class="sub-title">10.7 Withdrawal of beta consent</div>
-    <p>You may withdraw your consent to beta testing participation at any time by contacting <strong>admin@volioapp.it</strong>. Withdrawal will end your participation in the beta program and will trigger deletion of your identifiable beta data, except where retention is required by law or for legitimate interest in demonstrating prior consent.</p>
-  </div>
-  <hr>
-
-  <div class="section">
-    <div class="section-title">11. Data Retention</div>
-    <p>Your personal data will be retained for as long as your account is active and for up to <strong>12 months</strong> after account closure, unless you request deletion earlier or a longer retention period is required by law.</p>
-    <ul>
-      <li>Email address: retained until you unsubscribe or request deletion.</li>
-      <li>Recorded flight data (ADS-B, MLAT, FLARM, OGN): may be retained in anonymised or aggregated form for product development. Raw flight data cached from Flightradar24 is deleted within the caching window specified per endpoint in Flightradar24's API documentation.</li>
-      <li>Map interaction data: not stored by Volio App — processed solely by Mapbox.</li>
-      <li>Payment and transaction data: limited transaction metadata is retained for as long as required by Apple/Google purchase validation and applicable tax/accounting law. Full payment card details are never held by Volio App.</li>
-      <li>Beta signup records (Microsoft Forms): retained up to 24 months for GDPR compliance purposes.</li>
-      <li>Beta tester phone numbers: deleted within 7 days of leaving the WhatsApp group or upon request.</li>
-    </ul>
-  </div>
-  <hr>
-
-  <div class="section">
-    <div class="section-title">12. Account Deletion</div>
-    <p>You may delete your account and the personal data associated with it at any time, in either of two ways:</p>
-    <ul>
-      <li><strong>In-app deletion:</strong> via <strong>Profile &gt; Delete Account</strong>. This is a fully self-service flow — no need to contact support — other than identity-verification steps where required for your security.</li>
-      <li><strong>Web-based deletion request:</strong> via <a href="https://forms.cloud.microsoft/e/DJAyFbyxVP" target="_blank"><strong>Volio App — Account Deletion Request</strong></a>, available without installing the App.</li>
-    </ul>
-    <p>Upon deletion, your personal data — including account data, flight track associations, and beta-related data where applicable — is permanently removed from our active systems, other than data we are required or permitted to retain for legal, security, fraud-prevention, tax, or regulatory compliance purposes (see Section 11, Data Retention). If you signed in using <strong>Sign in with Apple</strong>, deletion of your account also triggers revocation of the associated Sign in with Apple credentials via Apple's token revocation API. Deletion requests are processed without undue delay and in any case within the timeframes required by applicable law.</p>
-  </div>
-  <hr>
-
-  <div class="section">
-    <div class="section-title">13. Your Rights</div>
-    <p>Under the GDPR and Swiss nFADP, you have the right to:</p>
-    <ul>
-      <li><strong>Access</strong> — request a copy of the personal data we hold about you.</li>
-      <li><strong>Rectification</strong> — ask us to correct inaccurate or incomplete data.</li>
-      <li><strong>Erasure</strong> — request deletion of your data ("right to be forgotten"), including via the self-service account deletion described in Section 12.</li>
-      <li><strong>Restriction</strong> — ask us to limit processing in certain circumstances.</li>
-      <li><strong>Data portability</strong> — receive your data in a structured, machine-readable format.</li>
-      <li><strong>Object</strong> — object to processing based on legitimate interest.</li>
-      <li><strong>Withdraw consent</strong> — at any time for email communications, flight data sharing, or beta testing participation, without affecting prior processing.</li>
-      <li><strong>Flight data takedown</strong> — request removal of wrongly associated flight data (see Section 14).</li>
-    </ul>
-    <p>To exercise any of these rights, contact: <strong>admin@volioapp.it</strong>. We will respond within <strong>30 days</strong>.</p>
-    <p>EU residents may lodge a complaint with the <strong>Garante per la protezione dei dati personali</strong> at <a href="https://www.garanteprivacy.it">www.garanteprivacy.it</a>. Swiss residents may contact the <strong>FDPIC</strong> at <a href="https://www.edoeb.admin.ch">www.edoeb.admin.ch</a>.</p>
-  </div>
-  <hr>
-
-  <div class="section">
-    <div class="section-title">14. Wrongful Association — Your Right to Request Removal</div>
-    <p>If you believe that a flight track or ADS-B data relating to a flying object you piloted or operate has been wrongly associated with another user's profile without your consent, contact us at <strong>admin@volioapp.it</strong> with the subject line "Flight Data Takedown Request". We will review and action all such requests within <strong>72 hours</strong>.</p>
-  </div>
-  <hr>
-
-  <div class="section">
-    <div class="section-title">15. Data Security</div>
-    <p>We implement appropriate technical and organisational measures to protect your personal data, including hosting on AWS infrastructure certified to ISO 27001 and SOC 2 standards within the EU. However, no system is completely secure. Please do not share sensitive information beyond what is required to use the App.</p>
-  </div>
-  <hr>
-
-  <div class="section">
-    <div class="section-title">16. Children</div>
-    <p>The App is available to users aged <strong>16 and over</strong>. We do not knowingly collect personal data from individuals under 16. If you believe a person under 16 has registered, please contact us at <strong>admin@volioapp.it</strong> immediately.</p>
-  </div>
-  <hr>
-
-  <div class="section">
-    <div class="section-title">17. Changes to This Policy</div>
-    <p>This Privacy Policy may be updated to reflect changes in the App, our processors, or applicable law. If changes are material, you will be notified by email at least <strong>14 days</strong> in advance.</p>
-  </div>
-  <hr>
-
-  <div class="section">
-    <div class="section-title">18. Contact</div>
-    <div class="contact-box"><strong>Volio App S.r.l.</strong><br>Via Mazzini 10, 22077 Olgiate Comasco (CO), Italy<br>P.IVA 04312420138 — REA [REA Number]<br>admin@volioapp.it</div>
+  <div id="cover-it" style="display:none">
+    <h1>Informativa sulla Privacy</h1>
+    <div class="subtitle">Volio App S.r.l.</div>
   </div>
 </div>
+
+<div id="body-en">
+  <div class="container">
+    <div class="intro-box">This Privacy Policy describes how Volio App S.r.l. collects, uses and protects your personal data when you use the Volio mobile application.</div>
+    <a href="https://www.iubenda.com/privacy-policy/15315799" class="iubenda-white no-brand iubenda-noiframe iubenda-embed iub-body-embed" title="Privacy Policy">Privacy Policy</a>
+  </div>
+</div>
+
+<div id="body-it" style="display:none">
+  <div class="container">
+    <div class="intro-box">La presente Informativa sulla Privacy descrive come Volio App S.r.l. raccoglie, utilizza e protegge i tuoi dati personali durante l&rsquo;utilizzo dell&rsquo;applicazione mobile Volio.</div>
+    <a href="https://www.iubenda.com/privacy-policy/50778857" class="iubenda-white no-brand iubenda-noiframe iubenda-embed iub-body-embed" title="Informativa sulla Privacy">Informativa sulla Privacy</a>
+  </div>
+</div>
+
+<script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+
+<script>
+function setLang(lang) {
+  document.getElementById('body-en').style.display = lang === 'en' ? '' : 'none';
+  document.getElementById('body-it').style.display = lang === 'it' ? '' : 'none';
+  document.getElementById('cover-en').style.display = lang === 'en' ? '' : 'none';
+  document.getElementById('cover-it').style.display = lang === 'it' ? '' : 'none';
+  document.getElementById('btn-en').className = lang === 'en' ? 'active' : '';
+  document.getElementById('btn-it').className = lang === 'it' ? 'active' : '';
+  document.documentElement.lang = lang;
+  try { localStorage.setItem('volio-pp-lang', lang); } catch(e) {}
+}
+(function() {
+  try { var l = localStorage.getItem('volio-pp-lang'); if (l === 'it') setLang('it'); } catch(e) {}
+})();
+</script>
+
 </body>
 </html>
